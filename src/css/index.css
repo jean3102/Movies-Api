@@ -1,0 +1,12 @@
+* {
+  background: #333;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  margin: auto;
+  padding: inherit;
+}
+
+.image li img:hover{
+  opacity: 0.6;
+  transition: 255ms;
+}
