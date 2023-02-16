@@ -2,9 +2,8 @@ Create an app to find movies
 API:
 
 https://www.omdbapi.com/
-API_KEY: 4287ad07
-// https://www.omdbapi.com/?i=tt3896198&apikey=31dda70&s=Avengers
-// https://www.omdbapi.com/?i=b3d09d3d&apikey=31dda70&s=Avengers
+API_KEY: #####
+
 
 Requirements:
 
