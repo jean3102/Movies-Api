@@ -1,7 +1,7 @@
 * {
   background: #333;
   color: white;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   margin: auto;
   padding: inherit;
 }
@@ -10,3 +10,8 @@
   opacity: 0.6;
   transition: 255ms;
 }
+
+.searchInput:focus{
+  outline: none;
+}
+

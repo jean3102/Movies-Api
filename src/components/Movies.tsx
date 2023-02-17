@@ -18,6 +18,7 @@ export default function Movies() {
 	return (
 		<>
 			<header style={styles.header}>
+				<h1 style={styles.h}>Search Movie Trailer</h1>
 				<FormMovies getListMovies={getListMovies} />
 
 				{error ? (
@@ -43,6 +44,9 @@ const styles = {
 		display: "grid",
 		placeItems: "center",
 		minWidth: "100%",
-		marginTop: 80,
+		marginTop: 50,
 	},
+	h:{
+		marginBottom: 20,
+	}
 };

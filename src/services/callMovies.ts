@@ -1,3 +1,6 @@
+import { IMoviesMap } from "../interfaces/movies";
+
+
 export default async function (search: String) {
 	const apiKey = "31dda70";
 
@@ -6,10 +9,10 @@ export default async function (search: String) {
 		const res = await fetch(url);
 		const json = await res.json();
 
-		const movies = await json.Search;
+		const movies = json.Search;
 		if (movies === undefined) return [];
 
-		return movies?.map((movie: any) => ({
+		return movies?.map((movie: IMoviesMap) => ({
 			title: movie.Title,
 			year: movie.Year,
 			id: movie.imdbID,

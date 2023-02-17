@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 interface FormMoviesProps {
 	getListMovies: (search: string) => void;
@@ -6,6 +6,10 @@ interface FormMoviesProps {
 export default function FormMovies({ getListMovies }: FormMoviesProps) {
 	const [search, setSearch] = useState<string>("");
 	const searchRef = useRef<HTMLInputElement>(null!);
+
+	useEffect(() => {
+		searchRef.current.focus()
+	}, []);
 
 	const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
 		setSearch(target.value.trim());
@@ -18,9 +22,8 @@ export default function FormMovies({ getListMovies }: FormMoviesProps) {
 	};
 
 	const handleValidation = () => {
-		if (search == "") {
+		if (search === "") {
 			searchRef.current.style.border = "1px solid red";
-			searchRef.current.focus();
 		}
 		return search !== "";
 	};
@@ -35,10 +38,10 @@ export default function FormMovies({ getListMovies }: FormMoviesProps) {
 					onChange={(event) => handleChange(event)}
 					style={styles.input}
 					placeholder="search movies"
-				/>
+					className="searchInput"
+				/> 
 				<button style={styles.button}>Search</button>
 			</form>
-			
 		</>
 	);
 }
@@ -52,6 +55,7 @@ const styles = {
 		backgroundColor: "#333",
 		color: "#fff",
 		padding: "15px",
+		
 	},
 	button: {
 		fontSize: "1.3em",
