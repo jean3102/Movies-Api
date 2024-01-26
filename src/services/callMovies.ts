@@ -1,8 +1,7 @@
-import { IMoviesMap } from "../interfaces/movies";
-
+import { IMoviesMap } from '../interfaces/movies';
 
 export default async function (search: String) {
-	const apiKey = "31dda70";
+	const apiKey = import.meta.env.VITE_API_KEY;
 
 	try {
 		const url = `https://www.omdbapi.com/?i=tt3896198&apikey=${apiKey}&s=${search}`;
